@@ -12,19 +12,19 @@ export const PROFILE_COPY: Record<
   engineering: {
     pt: {
       skills:
-        "Sou Desenvolvedor de Software com experiência prática no desenvolvimento de aplicações web, trabalhando com tecnologias como JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, integração de APIs e uso diário de Git/GitHub, entregando aplicações web desde o levantamento de requisitos até à manutenção em produção.",
+        "Sou Desenvolvedor de Software com experiência prática no desenvolvimento de aplicações web, trabalhando com tecnologias como JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, integração de APIs e uso diário de Git/Github, entregando aplicações web desde o levantamento de requisitos até à manutenção em produção.",
       profile:
         "O meu perfil é proativo e orientado a resultados, e tenho interesse genuíno em crescer numa equipa que valorize a entrega de qualidade.",
     },
     en: {
       skills:
-        "I am a Software Engineer with hands-on experience building web applications, working with technologies such as JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, API integration, and daily use of Git/GitHub, delivering web applications from requirements gathering through production maintenance.",
+        "I am a Software Engineer with hands-on experience building web applications, working with technologies such as JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, API integration, and daily use of Git/Github, delivering web applications from requirements gathering through production maintenance.",
       profile:
         "My profile is proactive and results-oriented, and I have a genuine interest in growing in a team that values ​​quality delivery.",
     },
     fr: {
       skills:
-        "Je suis développeur de logiciels avec une expérience pratique dans le développement d'applications web, travaillant avec des technologies telles que JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, l'intégration d'API et l'utilisation quotidienne de Git/GitHub, livrant des applications web depuis le recueil des besoins jusqu'à la maintenance en production.",
+        "Je suis développeur de logiciels avec une expérience pratique dans le développement d'applications web, travaillant avec des technologies telles que JavaScript/TypeScript, React, Next.js, Prisma, PostgreSQL, l'intégration d'API et l'utilisation quotidienne de Git/Github, livrant des applications web depuis le recueil des besoins jusqu'à la maintenance en production.",
       profile:
         "Mon profil est proactif et axé sur les résultats, et j'ai un réel intérêt à évoluer au sein d'une équipe qui valorise une livraison de qualité.",
     },
