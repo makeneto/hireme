@@ -6,7 +6,7 @@ import { joinList } from "@/lib/utils"
 import {
   buildBodyParagraphs,
   buildClosingBlock,
-  buildGmailComposeUrl,
+  openGmailCompose,
 } from "@/lib/email-content"
 import type {
   ApplicationAreaCode,
@@ -74,7 +74,7 @@ export function useEmailComposer() {
     const body = [...bodyParagraphs, "", ...closingBlock]
       .join("\n\n")
       .replace(/\n\n\n/g, "\n\n")
-    window.open(buildGmailComposeUrl(companyEmail, subject, body), "_blank")
+    openGmailCompose(companyEmail, subject, body)
     setSent(true)
   }
 
