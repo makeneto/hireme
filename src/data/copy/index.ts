@@ -1,0 +1,12 @@
+import type { ApplicationAreaCode, LanguageCode } from "@/types"
+import { SHARED_COPY, type SharedCopy } from "./shared"
+import { PROFILE_COPY, ProfileCopy } from "./profile"
+
+export type CopyEntry = SharedCopy & ProfileCopy
+
+export function getCopy(
+  area: ApplicationAreaCode,
+  language: LanguageCode,
+): CopyEntry {
+  return { ...SHARED_COPY[language], ...PROFILE_COPY[area][language] }
+}
