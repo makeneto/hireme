@@ -57,3 +57,53 @@ export function buildGmailComposeUrl(
   })
   return `https://mail.google.com/mail/?${params.toString()}`
 }
+
+/** Deep link to the native Gmail app (iOS and Android). */
+export function buildGmailAppUrl(
+  to: string,
+  subject: string,
+  body: string,
+): string {
+  const params = new URLSearchParams({ to, subject, body })
+  return `googlegmail://co?${params.toString()}`
+}
+
+/**
+ * Open Gmail: try the native app on mobile, with automatic fallback
+ * for Gmail web if the app is not installed. On the desktop it goes
+ * direct to the web.
+ */
+export function openGmailCompose(
+  to: string,
+  subject: string,
+  body: string,
+): void {
+  const webUrl = buildGmailComposeUrl(to, subject, body)
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+
+  if (!isMobile) {
+    window.open(webUrl, "_blank", "noopener,noreferrer")
+    return
+  }
+
+  let didHide = false
+  const onVisibilityChange = () => {
+    if (document.hidden) didHide = true
+  }
+  document.addEventListener("visibilitychange", onVisibilityChange)
+
+  const fallbackTimer = setTimeout(() => {
+    document.removeEventListener("visibilitychange", onVisibilityChange)
+
+    // If the page was never hidden, the app didn't open — it drops to the web.
+    if (!didHide) {
+      window.open(webUrl, "_blank", "noopener,noreferrer")
+    }
+  }, 1200)
+
+  window.addEventListener("pagehide", () => clearTimeout(fallbackTimer), {
+    once: true,
+  })
+
+  window.location.href = buildGmailAppUrl(to, subject, body)
+}
