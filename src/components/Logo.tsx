@@ -12,7 +12,7 @@ export default function Logo() {
         <g
           style={{ opacity: 1 }}
           id="logogram"
-          transform="translate(0, 0)&#10;    rotate(0 35.5 20.5)"
+          transform="translate(0, 0)&#10; rotate(0 35.5 20.5)"
         >
           <path
             d="M37.5569 2.04585C38.4821 1.08338 39.7385 0.542663 41.0469 0.542664C46.9335 0.542664 52.4811 0.542667 57.9442 0.542678C68.932 0.542701 74.4342 14.3629 66.6646 22.4456L49.7407 40.0517C48.9637 40.86 47.6352 40.2875 47.6352 39.1444V23.6376L49.591 21.6029C51.145 19.9864 50.0444 17.2223 47.8468 17.2223H22.9684L37.5569 2.04585Z"
@@ -23,7 +23,7 @@ export default function Logo() {
             className="fill-lime-600 dark:fill-lime-500"
           />
         </g>
-        <g style={{ opacity: 1 }} id="logotype" transform="" />
+        <g style={{ opacity: 1 }} id="logotype" />
       </svg>
 
       <h1 className="text-xl font-semibold">Hireme</h1>
