@@ -64,8 +64,10 @@ export function buildGmailAppUrl(
   subject: string,
   body: string,
 ): string {
-  const params = new URLSearchParams({ to, subject, body })
-  return `googlegmail://co?${params.toString()}`
+  const encodedTo = encodeURIComponent(to)
+  const encodedSubject = encodeURIComponent(subject)
+  const encodedBody = encodeURIComponent(body)
+  return `googlegmail://co?to=${encodedTo}&subject=${encodedSubject}&body=${encodedBody}`
 }
 
 /**
