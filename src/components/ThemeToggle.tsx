@@ -1,6 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react"
 import { Button } from "./ui/button"
 
 export default function ThemeToggle() {
@@ -13,11 +14,8 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
       className="hidden md:block"
     >
-      <img
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vEewL3IqHt4EVkee4yAJWim9QCivJS.png"
-        alt="Alternar tema"
-        className="nav-icon size-5 object-contain"
-      />
+      <Sun className="nav-icon hidden dark:block" />
+      <Moon className="nav-icon block dark:hidden" />
     </Button>
   )
 }

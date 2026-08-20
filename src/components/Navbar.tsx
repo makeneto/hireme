@@ -1,7 +1,7 @@
 "use client"
 
 import ThemeToggle from "./ThemeToggle"
-import { Eye } from "lucide-react"
+import { Eye, Send } from "lucide-react"
 import { useEmailComposer } from "@/hooks/useEmailComposer"
 import { Button } from "./ui/button"
 import Logo from "./Logo"
@@ -17,10 +17,21 @@ export default function Navbar() {
         <Button
           variant="outline"
           size="sm"
-          onClick={composer.showPreview}
+          onClick={composer.handleSubmit}
           disabled={!composer.canSubmit}
+          className="hidden md:inline-flex"
         >
-          <Eye className="w-4 h-4" /> Mostrar Prévia
+          <Send className="w-4 h-4" /> Enviar no Gmail
+        </Button>
+
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={composer.isPreviewOpen ? composer.closePreview : composer.showPreview}
+          disabled={!composer.isPreviewOpen && !composer.canSubmit}
+          className="md:hidden"
+        >
+          {composer.isPreviewOpen ? <><Eye className="w-4 h-4" /> Mostrar Formulário</> : <><Eye className="w-4 h-4" /> Mostrar Prévia</>}
         </Button>
 
         <div className="w-px h-6 hidden md:block bg-gray-200 dark:bg-gray-800" />
