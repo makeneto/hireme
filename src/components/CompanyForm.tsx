@@ -23,6 +23,7 @@ import {
   setField,
   setLanguage,
 } from "@/store/emailComposerSlice"
+import NotNullSign from "./ui/not-null-sign"
 
 const schema = z.object({
   companyName: z.string().trim().min(1, "Nome da empresa é obrigatório."),
@@ -67,7 +68,7 @@ export default function CompanyForm() {
           <Field data-invalid={!!fieldError("companyName")}>
             <FieldLabel htmlFor="company-name" className={labelClasses}>
               <Building2 className="w-3 h-3" />
-              Nome da Empresa
+              Nome da Empresa <NotNullSign />
             </FieldLabel>
             <Input
               id="company-name"
@@ -78,15 +79,16 @@ export default function CompanyForm() {
               aria-invalid={!!fieldError("companyName")}
             />
             {fieldError("companyName") && (
-              <FieldDescription className="text-destructive">
+              <FieldDescription className="text-destructive text-xs">
                 {fieldError("companyName")}
               </FieldDescription>
             )}
           </Field>
+
           <Field data-invalid={!!fieldError("jobTitle")}>
             <FieldLabel htmlFor="job-title" className={labelClasses}>
               <Briefcase className="w-3 h-3" />
-              Título da Vaga
+              Título da Vaga <NotNullSign />
             </FieldLabel>
             <Input
               id="job-title"
@@ -97,16 +99,17 @@ export default function CompanyForm() {
               aria-invalid={!!fieldError("jobTitle")}
             />
             {fieldError("jobTitle") && (
-              <FieldDescription className="text-destructive">
+              <FieldDescription className="text-destructive text-xs">
                 {fieldError("jobTitle")}
               </FieldDescription>
             )}
           </Field>
         </div>
+
         <Field data-invalid={!!fieldError("companyEmail")}>
           <FieldLabel htmlFor="company-email" className={labelClasses}>
             <Mail className="w-3 h-3" />
-            Email da Empresa
+            Email da Empresa <NotNullSign />
           </FieldLabel>
           <Input
             id="company-email"
@@ -117,11 +120,12 @@ export default function CompanyForm() {
             aria-invalid={!!fieldError("companyEmail")}
           />
           {fieldError("companyEmail") && (
-            <FieldDescription className="text-destructive">
+            <FieldDescription className="text-destructive text-xs">
               {fieldError("companyEmail")}
             </FieldDescription>
           )}
         </Field>
+
         <div className="grid grid-cols-2 gap-x-4">
           <Field>
             <FieldLabel className={labelClasses}>
