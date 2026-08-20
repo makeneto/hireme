@@ -1,11 +1,11 @@
 "use client"
 
-import ActionButtons from "@/components/ActionButtons"
+import ActionButtons from "@/components/form/ActionButtons"
 import AttachmentsToggle from "@/components/AttachmentsToggle"
-import CompanyForm from "@/components/CompanyForm"
 import EmailPreview from "@/components/EmailPreview"
 import Header from "@/components/Header"
 import { useEmailComposer } from "@/hooks/useEmailComposer"
+import CompanyForm from "@/components/form/CompanyForm"
 
 export default function Home() {
   const composer = useEmailComposer()
@@ -37,6 +37,7 @@ export default function Home() {
             }
           />
         </div>
+
         <div
           className={
             composer.previewOpen ? "block md:block" : "hidden md:block"
