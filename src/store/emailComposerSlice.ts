@@ -1,10 +1,9 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import type {
   ApplicationAreaCode,
-  AttachmentKey,
-  AttachmentsState,
   LanguageCode,
-} from "@/interfaces/types"
+} from "@/interfaces/select-types"
+import { AttachmentKey, AttachmentsState } from "@/interfaces/checkbox-types"
 
 const initialState = {
   companyName: "",
