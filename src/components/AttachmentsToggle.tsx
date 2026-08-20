@@ -30,16 +30,17 @@ export default function AttachmentsToggle({
       <FieldGroup className="mt-1.5 mb-10">
         <div className="grid gap-5">
           {ITEMS.map((item) => (
-            <Field key={item.key} orientation="horizontal">
+            <Field key={item.key} orientation="horizontal" className="flex gap-2 w-fit">
               <Checkbox
                 id={`attachment-${item.key}`}
                 checked={!!attachments[item.key]}
                 onCheckedChange={() => onToggle(item.key)}
+                disabled={item.label === "Curriculum"}
               />
 
               <FieldLabel
                 htmlFor={`attachment-${item.key}`}
-                className="font-normal"
+                className="font-normal cursor-pointer"
               >
                 {item.label}
               </FieldLabel>
