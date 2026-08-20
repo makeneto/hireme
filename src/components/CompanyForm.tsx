@@ -19,7 +19,7 @@ import { APPLICATION_AREAS, LANGUAGES } from "@/data/options"
 import type {
   ApplicationAreaCode,
   LanguageCode,
-} from "@/interfaces/select-type"
+} from "@/interfaces/select-types"
 import type { RootState, AppDispatch } from "@/store"
 import {
   setApplicationArea,
