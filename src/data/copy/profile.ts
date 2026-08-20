@@ -1,4 +1,7 @@
-import type { ApplicationAreaCode, LanguageCode } from "@/interfaces/types"
+import type {
+  ApplicationAreaCode,
+  LanguageCode,
+} from "@/interfaces/select-types"
 
 export interface ProfileCopy {
   skills: string
