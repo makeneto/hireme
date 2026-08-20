@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Hireme | Makene Neto",
+  title: "Hireme",
   description:
     "Hireme is an automatic application email generator: you enter the company, job title, company language, application area and the documents that will be mentioned, and it creates a complete email, ready to send, eliminating repetitive writing for each new application.",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Makene Neto", url: "https://hiremme.vercel.app" }],
   openGraph: {
-    title: "Hireme | Makene Neto",
+    title: "Hireme",
     description:
       "Hireme is an automatic application email generator: you enter the company, job title, company language, application area and the documents that will be mentioned, and it creates a complete email, ready to send, eliminating repetitive writing for each new application.",
     images: ["https://i.postimg.cc/C1N9nNgy/hireme.png"],
