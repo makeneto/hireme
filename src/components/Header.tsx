@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="max-w-6xl mx-auto mb-18 ">
+    <div className="mx-auto mb-18 xl:mt-4">
       <p className="text-lime-600 dark:text-lime-500 text-xs tracking-widest mb-2">
         Makene Neto · Ferramentas
       </p>
