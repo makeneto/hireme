@@ -5,8 +5,6 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { useDispatch, useSelector } from "react-redux"
-import { Field, FieldDescription, FieldLabel } from "./ui/field"
-import { Input } from "./ui/input"
 import {
   Select,
   SelectContent,
@@ -14,7 +12,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select"
+} from "../ui/select"
 import { APPLICATION_AREAS, LANGUAGES } from "@/data/options"
 import type {
   ApplicationAreaCode,
@@ -26,7 +24,9 @@ import {
   setField,
   setLanguage,
 } from "@/store/emailComposerSlice"
-import NotNullSign from "./ui/not-null-sign"
+import NotNullSign from "../ui/not-null-sign"
+import { Field, FieldDescription, FieldLabel } from "../ui/field"
+import { Input } from "../ui/input"
 
 const schema = z.object({
   companyName: z.string().trim().min(1, "Nome da empresa é obrigatório."),
