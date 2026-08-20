@@ -9,6 +9,7 @@ import { useEmailComposer } from "@/hooks/useEmailComposer"
 
 export default function Home() {
   const composer = useEmailComposer()
+
   return (
     <div className="min-h-screen text-neutral-900 dark:text-neutral-100">
       <Header />
