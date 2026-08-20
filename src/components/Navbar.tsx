@@ -27,11 +27,21 @@ export default function Navbar() {
         <Button
           variant="outline"
           size="sm"
-          onClick={composer.previewOpen ? composer.closePreview : composer.showPreview}
+          onClick={
+            composer.previewOpen ? composer.closePreview : composer.showPreview
+          }
           disabled={!composer.previewOpen && !composer.canSubmit}
           className="md:hidden"
         >
-          {composer.previewOpen ? <><Eye className="w-4 h-4" /> Voltar ao formulário</> : <><Eye className="w-4 h-4" /> Mostrar Prévia</>}
+          {composer.previewOpen ? (
+            <>
+              <Eye className="w-4 h-4" /> Voltar ao formulário
+            </>
+          ) : (
+            <>
+              <Eye className="w-4 h-4" /> Mostrar Prévia
+            </>
+          )}
         </Button>
 
         <div className="w-px h-6 hidden md:block bg-gray-200 dark:bg-gray-800" />
