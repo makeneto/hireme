@@ -1,7 +1,7 @@
 import type {
   ApplicationAreaCode,
   LanguageCode,
-} from "@/interfaces/select-type"
+} from "@/interfaces/select-types"
 import { SHARED_COPY, type SharedCopy } from "./shared"
 import { PROFILE_COPY, ProfileCopy } from "./profile"
 
