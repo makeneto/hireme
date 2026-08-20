@@ -9,7 +9,7 @@ export default function PreviewToggleButton({ composer }: ComposerProps) {
       variant="outline"
       size="sm"
       onClick={
-        composer.previewOpen ? composer.showPreview : composer.closePreview
+        composer.previewOpen ? composer.closePreview : composer.showPreview
       }
       disabled={!composer.previewOpen && !composer.canSubmit}
       className="md:hidden"
