@@ -1,4 +1,4 @@
-import type { AttachmentKey, LanguageCode } from "@/types"
+import type { AttachmentKey, LanguageCode } from "@/interfaces/types"
 
 export interface SharedCopy {
   subject: (job: string) => string
