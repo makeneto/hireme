@@ -23,9 +23,11 @@ export default function ActionButtons({
           <Send className="w-4 h-4" /> Enviar no Gmail
         </Button>
 
-        {hasValues && <Button onClick={onReset} variant="outline">
-          <RotateCcw className="w-4 h-4" /> Cancelar
-        </Button>}
+        {hasValues && (
+          <Button onClick={onReset} variant="outline">
+            <RotateCcw className="w-4 h-4" /> Cancelar
+          </Button>
+        )}
       </div>
 
       {!canSubmit && (
