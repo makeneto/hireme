@@ -31,7 +31,7 @@ export default function Navbar() {
           disabled={!composer.isPreviewOpen && !composer.canSubmit}
           className="md:hidden"
         >
-          {composer.isPreviewOpen ? <><Eye className="w-4 h-4" /> Mostrar Formulário</> : <><Eye className="w-4 h-4" /> Mostrar Prévia</>}
+          {composer.isPreviewOpen ? <><Eye className="w-4 h-4" /> Voltar ao formulário</> : <><Eye className="w-4 h-4" /> Mostrar Prévia</>}
         </Button>
 
         <div className="w-px h-6 hidden md:block bg-gray-200 dark:bg-gray-800" />
