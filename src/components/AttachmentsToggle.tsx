@@ -1,4 +1,4 @@
-import { AttachmentKey, AttachmentsState } from "@/types"
+import { AttachmentKey, AttachmentsState } from "@/interfaces/types"
 import { Paperclip } from "lucide-react"
 import { Field, FieldGroup, FieldLabel } from "./ui/field"
 import { Checkbox } from "./ui/checkbox"
