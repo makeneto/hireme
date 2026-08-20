@@ -2,8 +2,9 @@ import type {
   ApplicationAreaCode,
   LanguageCode,
 } from "@/interfaces/select-types"
-import { SHARED_COPY, type SharedCopy } from "./shared"
+import { SHARED_COPY } from "./shared"
 import { PROFILE_COPY, ProfileCopy } from "./profile"
+import { SharedCopy } from "@/interfaces/shared-types"
 
 export type CopyEntry = SharedCopy & ProfileCopy
 
