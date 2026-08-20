@@ -1,4 +1,8 @@
-import type { ApplicationAreaCode, Option, LanguageCode } from "@/types"
+import type {
+  ApplicationAreaCode,
+  Option,
+  LanguageCode,
+} from "@/interfaces/types"
 
 export const LANGUAGES: Option<LanguageCode>[] = [
   { code: "pt", label: "Português" },
