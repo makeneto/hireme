@@ -1,22 +1,5 @@
-import { AttachmentKey } from "@/interfaces/checkbox-types"
 import { LanguageCode } from "@/interfaces/select-types"
-
-export interface SharedCopy {
-  subject: (job: string) => string
-  subjectPlaceholder: string
-  companyPlaceholder: string
-  emailPlaceholder: string
-  greeting: (hour: number) => string
-  intro: (job: string, company: string) => string
-  attachIntro: (list: string) => string
-  closing: string
-  phone: string
-  portfolio: string
-  conj: string
-  to: string
-  subjectLabel: string
-  attachments: Record<AttachmentKey, string>
-}
+import { SharedCopy } from "@/interfaces/shared-types"
 
 export const SHARED_COPY: Record<LanguageCode, SharedCopy> = {
   pt: {
