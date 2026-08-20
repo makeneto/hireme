@@ -35,7 +35,7 @@ export default function Navbar() {
         >
           {composer.previewOpen ? (
             <>
-              <Eye className="w-4 h-4" /> Voltar ao formulário
+              <Eye className="w-4 h-4" /> Voltar ao Formulário
             </>
           ) : (
             <>
