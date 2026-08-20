@@ -16,7 +16,10 @@ import {
   SelectValue,
 } from "./ui/select"
 import { APPLICATION_AREAS, LANGUAGES } from "@/data/options"
-import type { ApplicationAreaCode, LanguageCode } from "@/interfaces/types"
+import type {
+  ApplicationAreaCode,
+  LanguageCode,
+} from "@/interfaces/select-type"
 import type { RootState, AppDispatch } from "@/store"
 import {
   setApplicationArea,
