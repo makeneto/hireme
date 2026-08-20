@@ -1,6 +1,6 @@
 import { CopyEntry } from "@/data/copy"
 import Placeholder from "./Placeholder"
-import { LanguageCode } from "@/interfaces/select-type"
+import { LanguageCode } from "@/interfaces/select-types"
 import { LANGUAGES } from "@/data/options"
 import type { ReactNode } from "react"
 import Link from "next/link"
