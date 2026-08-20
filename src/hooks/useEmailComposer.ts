@@ -23,26 +23,33 @@ export function useEmailComposer() {
   const dispatch = useDispatch<AppDispatch>()
   const state = useSelector((s: RootState) => s.emailComposer)
   const t = getCopy(state.applicationArea, state.language)
+
   const attachmentKeys = (
     Object.keys(state.attachments) as AttachmentKey[]
   ).filter((key) => state.attachments[key])
+
   const attachmentList = joinList(
     attachmentKeys.map((key) => t.attachments[key]),
     t.conj,
   )
+
   const subjectText = state.jobTitle.trim() ? t.subject(state.jobTitle) : null
+
   const canSubmit = schema.safeParse({
     companyName: state.companyName,
     jobTitle: state.jobTitle,
     companyEmail: state.companyEmail,
   }).success
+
   const bodyParagraphs = buildBodyParagraphs(t, {
     jobTitle: state.jobTitle,
     companyName: state.companyName,
     attachmentList,
     hour: new Date().getHours(),
   })
+
   const closingBlock = buildClosingBlock(t)
+
   const handleSubmit = () => {
     if (!canSubmit) return
     openGmailCompose(
@@ -52,6 +59,7 @@ export function useEmailComposer() {
     )
     dispatch(setSent(true))
   }
+
   return {
     ...state,
     t,
