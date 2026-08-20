@@ -1,5 +1,6 @@
 import { Send, RotateCcw } from "lucide-react"
 import { Button } from "./ui/button"
+import Footer from "./Footer"
 
 interface ActionButtonsProps {
   canSubmit: boolean
@@ -24,17 +25,14 @@ export default function ActionButtons({
         </Button>
 
         {hasValues && (
-          <Button onClick={onReset} variant="outline">
+          <Button onClick={onReset} variant="destructive">
             <RotateCcw className="w-4 h-4" /> Cancelar
           </Button>
         )}
       </div>
 
-      {!canSubmit && (
-        <p className="text-xs text-neutral-400 dark:text-neutral-600 mt-5.5">
-          Preencha nome da empresa, título da vaga e e-mail para poderes enviar.
-        </p>
-      )}
+      <Footer variant="mobile" />
+
       {sent && (
         <p className="text-xs text-lime-600 dark:text-lime-500 mt-5.5">
           Gmail aberto numa nova aba, já com destinatário, assunto e corpo
