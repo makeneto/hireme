@@ -2,7 +2,7 @@ import type {
   ApplicationAreaCode,
   Option,
   LanguageCode,
-} from "@/interfaces/select-type"
+} from "@/interfaces/select-types"
 
 export const LANGUAGES: Option<LanguageCode>[] = [
   { code: "pt", label: "Português" },
