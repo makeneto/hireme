@@ -1,82 +1,98 @@
 # Hireme
 
-> Gerador inteligente de e-mails de candidatura, criado para transformar dados de uma vaga numa mensagem profissional pronta para revisão e envio.
+> Intelligent application email generator, created to transform job posting data into a professional message ready for review and sending.
 
-## Visão geral
+## Overview
 
-O Hireme reduz o trabalho repetitivo de candidaturas. Informe a empresa, a vaga, o e-mail de destino, o idioma e a área profissional; a aplicação gera uma pré-visualização contextualizada com assunto, corpo e referências aos anexos selecionados.
+Hireme reduces repetitive application work. Provide the company, job title, destination email, language, and professional area; the application generates a contextualized preview with subject, body, and references to selected attachments.
 
-## Funcionalidades
+## Features
 
-- Formulário tipado com validação instantânea através de React Hook Form e Zod.
-- Mensagens de erro acessíveis para campos obrigatórios e e-mails inválidos.
-- Seletores multilíngues que exibem o nome legível, preservando códigos internos.
-- Pré-visualização responsiva, com modo fullscreen em dispositivos móveis.
-- Botão de prévia na navegação, ativado apenas após validação completa.
-- Gestão centralizada do estado com Redux Toolkit, sem prop drilling excessivo.
-- Seleção de anexos mencionados no e-mail.
-- Ação de envio que abre o Gmail com destinatário, assunto e conteúdo preenchidos.
-- Tema claro/escuro e interface responsiva.
+- Typed form with instant validation via React Hook Form and Zod.
+
+- Accessible error messages for required fields and invalid emails.
+
+- Multilingual selectors that display the readable name, preserving internal codes.
+
+- Responsive preview, with fullscreen mode on mobile devices.
+
+- Preview button in navigation, activated only after complete validation.
+
+- Centralized status management with Redux Toolkit, without excessive prop drilling.
+
+- Selection of attachments mentioned in the email.
+
+- Send action that opens Gmail with recipient, subject, and content pre-filled.
+
+- Light/dark theme and responsive interface.
 
 ## Stack
 
-- Next.js 16 e React 19
+- Next.js 16 and React 19
 - TypeScript
-- Redux Toolkit e React Redux
-- React Hook Form, Zod e resolvers
-- Tailwind CSS e componentes shadcn/ui
+- Redux Toolkit and React Redux
+- React Hook Form, Zod, and resolvers
+- Tailwind CSS and shadcn/ui components
 - pnpm
 
-## Requisitos
+## Requirements
 
-- Node.js 20 ou superior
-- pnpm 11 ou compatível
+- Node.js 20 or higher
+- pnpm 11 or compatible
 
-## Desenvolvimento local
+## Local Development
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no navegador.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Scripts
 
-| Comando | Descrição |
-| --- | --- |
-| `pnpm dev` | Inicia o servidor de desenvolvimento com HMR |
-| `pnpm build` | Cria a build de produção |
-| `pnpm start` | Inicia a aplicação compilada |
-| `pnpm lint` | Executa as verificações de lint |
+| Command | Description |
 
-## Estrutura principal
+| --- | --- |
+
+| `pnpm dev` | Starts the development server with HMR |
+
+| `pnpm build` | Creates the production build |
+
+| `pnpm start` | Starts the compiled application |
+
+| `pnpm lint` | Runs lint checks |
+
+## Main Structure
 
 ```text
 src/
-├── app/                    # Rotas, layout e estilos globais
-├── components/             # Componentes de interface e formulário
-├── data/                   # Opções e textos localizados
-├── hooks/                  # Estado derivado e regras de composição
-├── lib/                    # Utilitários e geração do conteúdo do e-mail
-├── store/                  # Slices e configuração Redux Toolkit
-└── types.ts                # Tipos partilhados da aplicação
+├── app/ # Global routes, layout, and styles
+├── components/ # Interface and form components
+├── data/ # Localized options and text
+├── hooks/ # Derived state and composition rules
+├── lib/ # Utilities and email content generation
+├── store/ # Slices and Redux Toolkit configuration
+└── types.ts # Shared application types
+
 ```
 
-## Fluxo de utilização
+## Usage Flow
 
-1. Preencha os três campos obrigatórios.
-2. Escolha o idioma e a área da candidatura.
-3. Selecione os anexos que serão mencionados.
-4. Use **Mostrar Prévia** para revisar a mensagem — em mobile, a prévia ocupa a tela inteira.
-5. Confirme o conteúdo e use **Enviar no Gmail**.
+1. Fill in the three required fields.
 
-O Hireme não faz upload automático de ficheiros: o navegador impede anexos via URL. Os documentos devem ser adicionados manualmente no Gmail.
+2. Choose the language and area of ​​application.
 
-## Qualidade e contribuição
+3. Select the attachments to be mentioned. 4. Use **Show Preview** to review the message — on mobile, the preview occupies the entire screen.
 
-Antes de abrir um pull request, execute `pnpm lint` e `pnpm build`. Mantenha os componentes acessíveis, preserve os tokens visuais existentes e evite introduzir estado local quando o dado for partilhado entre áreas da aplicação.
+5. Confirm the content and use **Send in Gmail**.
 
-## Licença
+Hireme does not automatically upload files: the browser prevents attachments via URL. Documents must be added manually to Gmail.
 
-Este projeto é mantido por Makene Neto. Consulte o proprietário do repositório para informações sobre licenciamento e utilização.
+## Quality and Contribution
+
+Before opening a pull request, run `pnpm lint` and `pnpm build`. Keep components accessible, preserve existing visual tokens, and avoid introducing local state when data is shared between areas of the application.
+
+## License
+
+This project is maintained by Makene Neto. Consult the repository owner for licensing and usage information.
