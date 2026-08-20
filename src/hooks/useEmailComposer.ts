@@ -8,7 +8,7 @@ import {
   buildClosingBlock,
   openGmailCompose,
 } from "@/lib/email-content"
-import type { AttachmentKey } from "@/interfaces/types"
+
 import type { RootState, AppDispatch } from "@/store"
 import {
   resetForm,
@@ -17,6 +17,7 @@ import {
   toggleAttachment,
 } from "@/store/emailComposerSlice"
 import { schema } from "@/components/CompanyForm"
+import { AttachmentKey } from "@/interfaces/checkbox-types"
 
 export function useEmailComposer() {
   const dispatch = useDispatch<AppDispatch>()
