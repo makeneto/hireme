@@ -1,4 +1,5 @@
-import type { AttachmentKey, LanguageCode } from "@/interfaces/select-types"
+import { AttachmentKey } from "@/interfaces/checkbox-types"
+import { LanguageCode } from "@/interfaces/select-types"
 
 export interface SharedCopy {
   subject: (job: string) => string
