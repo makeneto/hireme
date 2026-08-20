@@ -1,4 +1,4 @@
-import { AttachmentKey, AttachmentsState } from "@/interfaces/types"
+import { AttachmentKey, AttachmentsState } from "@/interfaces/checkbox-types"
 import { Paperclip } from "lucide-react"
 import { Field, FieldGroup, FieldLabel } from "./ui/field"
 import { Checkbox } from "./ui/checkbox"
@@ -30,7 +30,11 @@ export default function AttachmentsToggle({
       <FieldGroup className="mt-1.5 mb-10">
         <div className="grid gap-5">
           {ITEMS.map((item) => (
-            <Field key={item.key} orientation="horizontal" className="flex gap-2 w-fit">
+            <Field
+              key={item.key}
+              orientation="horizontal"
+              className="flex gap-2 w-fit"
+            >
               <Checkbox
                 id={`attachment-${item.key}`}
                 checked={!!attachments[item.key]}
