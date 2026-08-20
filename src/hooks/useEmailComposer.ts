@@ -16,8 +16,8 @@ import {
   setSent,
   toggleAttachment,
 } from "@/store/emailComposerSlice"
-import { schema } from "@/components/CompanyForm"
 import { AttachmentKey } from "@/interfaces/checkbox-types"
+import { schema } from "@/components/form/CompanyForm"
 
 export function useEmailComposer() {
   const dispatch = useDispatch<AppDispatch>()
