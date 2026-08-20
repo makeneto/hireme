@@ -77,7 +77,7 @@ export default function CompanyForm() {
               id="company-name"
               value={companyName}
               onChange={(e) => update("companyName", e.target.value)}
-              placeholder="Ex: Makene Jobs"
+              placeholder="Google"
               className={inputClasses}
               aria-invalid={!!fieldError("companyName")}
             />
@@ -97,7 +97,7 @@ export default function CompanyForm() {
               id="job-title"
               value={jobTitle}
               onChange={(e) => update("jobTitle", e.target.value)}
-              placeholder="Ex: Engenheiro de Software"
+              placeholder="Engenheiro de Software"
               className={inputClasses}
               aria-invalid={!!fieldError("jobTitle")}
             />
