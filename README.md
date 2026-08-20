@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hireme
 
-## Getting Started
+> Gerador inteligente de e-mails de candidatura, criado para transformar dados de uma vaga numa mensagem profissional pronta para revisão e envio.
 
-First, run the development server:
+## Visão geral
+
+O Hireme reduz o trabalho repetitivo de candidaturas. Informe a empresa, a vaga, o e-mail de destino, o idioma e a área profissional; a aplicação gera uma pré-visualização contextualizada com assunto, corpo e referências aos anexos selecionados.
+
+## Funcionalidades
+
+- Formulário tipado com validação instantânea através de React Hook Form e Zod.
+- Mensagens de erro acessíveis para campos obrigatórios e e-mails inválidos.
+- Seletores multilíngues que exibem o nome legível, preservando códigos internos.
+- Pré-visualização responsiva, com modo fullscreen em dispositivos móveis.
+- Botão de prévia na navegação, ativado apenas após validação completa.
+- Gestão centralizada do estado com Redux Toolkit, sem prop drilling excessivo.
+- Seleção de anexos mencionados no e-mail.
+- Ação de envio que abre o Gmail com destinatário, assunto e conteúdo preenchidos.
+- Tema claro/escuro e interface responsiva.
+
+## Stack
+
+- Next.js 16 e React 19
+- TypeScript
+- Redux Toolkit e React Redux
+- React Hook Form, Zod e resolvers
+- Tailwind CSS e componentes shadcn/ui
+- pnpm
+
+## Requisitos
+
+- Node.js 20 ou superior
+- pnpm 11 ou compatível
+
+## Desenvolvimento local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descrição |
+| --- | --- |
+| `pnpm dev` | Inicia o servidor de desenvolvimento com HMR |
+| `pnpm build` | Cria a build de produção |
+| `pnpm start` | Inicia a aplicação compilada |
+| `pnpm lint` | Executa as verificações de lint |
 
-## Learn More
+## Estrutura principal
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/                    # Rotas, layout e estilos globais
+├── components/             # Componentes de interface e formulário
+├── data/                   # Opções e textos localizados
+├── hooks/                  # Estado derivado e regras de composição
+├── lib/                    # Utilitários e geração do conteúdo do e-mail
+├── store/                  # Slices e configuração Redux Toolkit
+└── types.ts                # Tipos partilhados da aplicação
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Fluxo de utilização
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Preencha os três campos obrigatórios.
+2. Escolha o idioma e a área da candidatura.
+3. Selecione os anexos que serão mencionados.
+4. Use **Mostrar Prévia** para revisar a mensagem — em mobile, a prévia ocupa a tela inteira.
+5. Confirme o conteúdo e use **Enviar no Gmail**.
 
-## Deploy on Vercel
+O Hireme não faz upload automático de ficheiros: o navegador impede anexos via URL. Os documentos devem ser adicionados manualmente no Gmail.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Qualidade e contribuição
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Antes de abrir um pull request, execute `pnpm lint` e `pnpm build`. Mantenha os componentes acessíveis, preserve os tokens visuais existentes e evite introduzir estado local quando o dado for partilhado entre áreas da aplicação.
+
+## Licença
+
+Este projeto é mantido por Makene Neto. Consulte o proprietário do repositório para informações sobre licenciamento e utilização.
