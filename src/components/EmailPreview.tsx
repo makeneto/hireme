@@ -2,11 +2,21 @@ import { CopyEntry } from "@/data/copy"
 import Placeholder from "./Placeholder"
 import { LanguageCode } from "@/types"
 import { LANGUAGES } from "@/data/options"
+import type { ReactNode } from "react"
+
+function highlightValues(text: string, values: string[]): ReactNode {
+  const activeValues = values.map((value) => value.trim()).filter(Boolean)
+  if (!activeValues.length) return text
+  const pattern = new RegExp(`(${activeValues.map((value) => value.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")).join("|")})`, "g")
+  return text.split(pattern).map((part, index) => activeValues.includes(part) ? <strong key={index} className="font-bold">{part}</strong> : part)
+}
 
 interface EmailPreviewProps {
   t: CopyEntry
   language: LanguageCode
   companyEmail: string
+  companyName: string
+  jobTitle: string
   subjectText: string | null
   bodyParagraphs: string[]
   closingBlock: string[]
@@ -16,6 +26,8 @@ export default function EmailPreview({
   t,
   language,
   companyEmail,
+  companyName,
+  jobTitle,
   subjectText,
   bodyParagraphs,
   closingBlock,
@@ -37,7 +49,9 @@ export default function EmailPreview({
           {t.to}
         </div>
         <div className="text-sm text-neutral-800 dark:text-neutral-200 mb-4 pb-4 border-b border-neutral-200 dark:border-neutral-800">
-          <Placeholder value={companyEmail} fallback={t.emailPlaceholder} />
+          <span className={companyEmail.trim() ? "font-bold" : undefined}>
+            <Placeholder value={companyEmail} fallback={t.emailPlaceholder} />
+          </span>
         </div>
 
         <div className="text-xs text-neutral-500 dark:text-neutral-500 mb-1">
@@ -45,7 +59,7 @@ export default function EmailPreview({
         </div>
 
         <div className="text-sm text-neutral-900 dark:text-neutral-100 font-medium mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-800">
-          {subjectText || (
+          {subjectText ? <span className="font-bold">{subjectText}</span> : (
             <span className="text-neutral-400 dark:text-neutral-600">
               {t.subjectPlaceholder}
             </span>
@@ -55,7 +69,7 @@ export default function EmailPreview({
         <div className="font-display text-neutral-800 dark:text-neutral-100 text-sm leading-relaxed space-y-4">
           {bodyParagraphs.map((p, i) => (
             <p key={i} className="first-of-type:font-semibold">
-              {p}
+              {highlightValues(p, [jobTitle, companyName])}
             </p>
           ))}
 

@@ -16,6 +16,6 @@ export default function Home() {
       <AttachmentsToggle attachments={composer.attachments} onToggle={composer.toggleAttachment} />
       <ActionButtons canSubmit={composer.canSubmit} onSubmit={composer.handleSubmit} onReset={composer.resetForm} sent={composer.sent} hasValues={!!(composer.companyName || composer.jobTitle || composer.companyEmail)} />
     </div>
-    <div className={composer.previewOpen ? "block md:block" : "hidden md:block"}><EmailPreview t={composer.t} language={composer.language} companyEmail={composer.companyEmail} subjectText={composer.subjectText} bodyParagraphs={composer.bodyParagraphs} closingBlock={composer.closingBlock} /></div>
+    <div className={composer.previewOpen ? "block md:block" : "hidden md:block"}><EmailPreview t={composer.t} language={composer.language} companyEmail={composer.companyEmail} companyName={composer.companyName} jobTitle={composer.jobTitle} subjectText={composer.subjectText} bodyParagraphs={composer.bodyParagraphs} closingBlock={composer.closingBlock} /></div>
   </div></div>
 }

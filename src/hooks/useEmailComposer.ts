@@ -19,6 +19,6 @@ export function useEmailComposer() {
   const canSubmit = schema.safeParse({ companyName: state.companyName, jobTitle: state.jobTitle, companyEmail: state.companyEmail }).success
   const bodyParagraphs = buildBodyParagraphs(t, { jobTitle: state.jobTitle, companyName: state.companyName, attachmentList, hour: new Date().getHours() })
   const closingBlock = buildClosingBlock(t)
-  const handleSubmit = () => { if (!canSubmit) return; openGmailCompose(state.companyEmail, t.subject(state.jobTitle), [...bodyParagraphs, "", ...closingBlock].join("\n\n").replace(/\n\n\n/g, "\n\n")); dispatch(setSent(true)) }
+  const handleSubmit = () => { if (!canSubmit) return; openGmailCompose(state.companyEmail, t.subject(state.jobTitle), `${bodyParagraphs.join("\n\n")}\n\n${closingBlock.join("\n")}`); dispatch(setSent(true)) }
   return { ...state, t, subjectText, bodyParagraphs, closingBlock, canSubmit, toggleAttachment: (key: AttachmentKey) => dispatch(toggleAttachment(key)), handleSubmit, resetForm: () => dispatch(resetForm()), showPreview: () => dispatch(setPreviewOpen(true)), closePreview: () => dispatch(setPreviewOpen(false)) }
 }
