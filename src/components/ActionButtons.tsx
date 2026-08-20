@@ -6,6 +6,7 @@ interface ActionButtonsProps {
   onSubmit: () => void
   onReset: () => void
   sent: boolean
+  hasValues: boolean
 }
 
 export default function ActionButtons({
@@ -13,6 +14,7 @@ export default function ActionButtons({
   onSubmit,
   onReset,
   sent,
+  hasValues,
 }: ActionButtonsProps) {
   return (
     <>
@@ -21,9 +23,9 @@ export default function ActionButtons({
           <Send className="w-4 h-4" /> Enviar no Gmail
         </Button>
 
-        <Button onClick={onReset} variant="outline">
+        {hasValues && <Button onClick={onReset} variant="outline">
           <RotateCcw className="w-4 h-4" /> Cancelar
-        </Button>
+        </Button>}
       </div>
 
       {!canSubmit && (

@@ -4,6 +4,7 @@ import "./globals.css"
 import { cn } from "@/lib/utils"
 import ThemeProvider from "@/components/ThemeProvider"
 import Navbar from "@/components/Navbar"
+import StoreProvider from "@/components/StoreProvider"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -57,12 +58,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <main className="py-8 px-8 md:py-10 md:px-14 xl:px-60">
-            {children}
-          </main>
-        </ThemeProvider>
+        <StoreProvider>
+          <ThemeProvider>
+            <Navbar />
+            <main className="py-8 px-8 md:py-10 md:px-14 xl:px-60">
+              {children}
+            </main>
+          </ThemeProvider>
+        </StoreProvider>
       </body>
     </html>
   )

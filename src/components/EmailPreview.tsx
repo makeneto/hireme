@@ -2,6 +2,8 @@ import { CopyEntry } from "@/data/copy"
 import Placeholder from "./Placeholder"
 import { LanguageCode } from "@/types"
 import { LANGUAGES } from "@/data/options"
+import { useEmailComposer } from "@/hooks/useEmailComposer"
+import { Button } from "./ui/button"
 
 interface EmailPreviewProps {
   t: CopyEntry
@@ -20,8 +22,11 @@ export default function EmailPreview({
   bodyParagraphs,
   closingBlock,
 }: EmailPreviewProps) {
+  const { closePreview } = useEmailComposer()
   return (
-    <div className="bg-neutral-100 dark:bg-zinc-900 z-90 border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden h-fit md:sticky md:top-6">
+    <div className="fixed inset-0 z-50 overflow-auto rounded-none border-0 bg-background pt-16 md:static md:rounded-2xl md:border md:bg-neutral-100 md:dark:bg-zinc-900 md:pt-0">
+      <div className="flex justify-end p-4 md:hidden"><Button variant="outline" size="sm" onClick={closePreview}>Voltar ao formulário</Button></div>
+    <div className="overflow-hidden h-fit md:sticky md:top-6">
       <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 dark:border-neutral-800">
         <h2 className="text-sm font-semibold text-neutral-700 dark:text-neutral-200 uppercase tracking-wide">
           Pré-visualização
@@ -67,6 +72,7 @@ export default function EmailPreview({
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
