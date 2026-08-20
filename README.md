@@ -37,8 +37,8 @@ Hireme reduces repetitive application work. Provide the company, job title, dest
 
 ## Requirements
 
-- Node.js 20 or higher
-- pnpm 11 or compatible
+- `Node.js 20` or higher
+- `pnpm 11` or compatible
 
 ## Local Development
 
@@ -52,15 +52,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Scripts
 
 | Command | Description |
-
 | --- | --- |
-
 | `pnpm dev` | Starts the development server with HMR |
-
 | `pnpm build` | Creates the production build |
-
 | `pnpm start` | Starts the compiled application |
-
 | `pnpm lint` | Runs lint checks |
 
 ## Main Structure
@@ -83,7 +78,9 @@ src/
 
 2. Choose the language and area of ​​application.
 
-3. Select the attachments to be mentioned. 4. Use **Show Preview** to review the message — on mobile, the preview occupies the entire screen.
+3. Select the attachments to be mentioned.
+
+4. Use **Show Preview** to review the message on mobile, the preview occupies the entire screen.
 
 5. Confirm the content and use **Send in Gmail**.
 
