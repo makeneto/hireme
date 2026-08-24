@@ -11,6 +11,7 @@ export default function Footer({ variant }: { variant: "mobile" | "desktop" }) {
         text-center text-xs font-medium text-neutral-500 dark:text-neutral-500 
         ${variant === "mobile" ? "mt-12 sm:hidden" : "mt-5.5"}
         `}
+      translate="no"
     >
       © Hireme By{" "}
       <Link href="https://makenedev.vercel.app">

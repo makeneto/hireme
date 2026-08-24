@@ -26,7 +26,7 @@ export default function Logo() {
         <g style={{ opacity: 1 }} id="logotype" />
       </svg>
 
-      <h1 className="text-xl font-semibold">Hireme</h1>
+      <h1 className="text-xl font-semibold" translate="no">Hireme</h1>
     </Link>
   )
 }
